@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  pdf-generator:
+    build: .
+    image: python-dynamic-pdf-generator
+    container_name: pdf-generator
+    volumes:
+      - ./outputs:/app/outputs
+      - ./templates:/app/templates:ro
+    environment:
+      - PYTHONUNBUFFERED=1
